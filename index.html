@@ -12,14 +12,29 @@
   <!-- Header and Navigation section -->
   <header>
     <a href="#"><img src="assets/images/logo.png" alt=""></a>
-    <nav>
+    <nav id="desktop-nav">
       <a href="#">Intro</a>
       <a href="#">Services</a>
       <a href="#">Team</a>
       <a href="#">Pricing</a>
       <a href="#">Sign Up</a>
     </nav>
+    <div id="toggle-btn" onclick="show()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </header>
+
+  <nav id="mobile-nav">
+    <a href="#">Intro</a>
+    <a href="#">Services</a>
+    <a href="#">Team</a>
+    <a href="#">Pricing</a>
+    <a href="#">Sign Up</a>
+    <span onclick="hide()">&#8593;</span>
+  </nav>
+
   <div>
     <!-- Header background image -->
     <div class="header-img"></div>
@@ -100,5 +115,15 @@
 
   <!-- Footer brackground -->
   <footer></footer>
+
+  <script>
+    function show() {
+      document.getElementById('mobile-nav').style.animation = 'show 0.5s 1 linear forwards';
+    }
+
+    function hide() {
+      document.getElementById('mobile-nav').style.animation = 'hide 0.5s 1 linear forwards';
+    }
+  </script>
 </body>
 </html>
