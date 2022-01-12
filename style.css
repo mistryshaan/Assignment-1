@@ -30,7 +30,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 300px;
+  padding: 25px 300px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: 0.3s ease-in-out;
 }
 
 header nav a {
@@ -38,9 +42,17 @@ header nav a {
   margin: 0 15px;
 }
 
+header nav a:hover {
+  color: hsl(207, 100%, 50%) !important;
+}
+
 header nav a:nth-child(5), #mobile-nav a:nth-child(5) {
   background-color: hsl(207, 100%, 50%);
   border-radius: 2px;
+}
+
+header nav a:nth-child(5):hover {
+  color: white !important;
 }
 
 #toggle-btn, #mobile-nav {
@@ -54,10 +66,24 @@ header nav a:nth-child(5), #mobile-nav a:nth-child(5) {
   margin: 6px 0;
 }
 
+#mobile-nav {
+  height: 100vh;
+  position: absolute;
+  top: -1000px;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: white;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .header-text {
   text-align: center;
   padding: 200px 0;
   color: white;
+  margin-top: 110px;
 }
 
 .header-text p:nth-child(1) {
@@ -100,7 +126,8 @@ header nav a:nth-child(5), #mobile-nav a:nth-child(5) {
   color: white;
   display: flex;
   justify-content: space-between;
-  transform: translateY(90px);
+  /* transform: translateY(90px); */
+  margin-top: 90px;
   padding: 0 300px;
 }
 
@@ -250,14 +277,31 @@ footer {
 }
 
 /* iPhone X */
-@media (max-width: 376px) {
+@media (max-width: 500px) {
+  header {
+    padding: 30px;
+  }
+
+  .header-text p:nth-child(2) {
+    font-size: 2.4rem;
+    width: 80%;
+    animation: typewriting 5s steps(44) 1, blinkCursor 0.5s infinite; 
+    border-right: 5px solid hsl(207, 100%, 50%);
+  }
+  
+  @keyframes typewriting {
+    from {
+      width: 0;
+    }
+  
+    to {
+      width: 80%;
+    }
+  }
+
   .cards, .services .services-cards {
     padding: 0;
     flex-direction: column;
-  }
-
-  .cards {
-    transform: translateY(130px);
   }
 
   .card, .services .services-cards .service-card {
@@ -265,39 +309,45 @@ footer {
     margin-bottom: 40px;
   }
 
-  .services > p {
-    margin-bottom: 50px;
+  .services {
+    margin-top: 100px;
   }
 
-  header {
-    padding: 30px;
+  .services > p {
+    margin-bottom: 50px;
   }
 
   #desktop-nav {
     display: none;
   }
 
-  #toggle-btn, #mobile-nav {
+  #toggle-btn {
     display: block;
   }
 
   #mobile-nav {
-    height: 100vh;
-    position: absolute;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    background-color: white;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  }
+
+  #toggle-btn:hover {
+    cursor: pointer;
   }
 
   #mobile-nav a, #mobile-nav span {
     color: black;
     font-weight: bold;
+    cursor: pointer;
+  }
+
+  #mobile-nav span {
+    text-align: center;
+    font-size: 24px;
+    background-color: black;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    overflow: hidden;
   }
 
   #mobile-nav a:nth-child(5) {
@@ -309,9 +359,13 @@ footer {
     color: hsl(207, 100%, 50%);
   }
 
+  #mobile-nav a:nth-child(5):hover {
+    color: white;
+  }
+
   @keyframes show {
     from {
-      top: -100%;
+      top: -1000px;
     }
     to {
       top: 0;
@@ -323,7 +377,7 @@ footer {
       top: 0;
     }
     to {
-      top: -100%;
+      top: -1000px;
     }
   }
 }
