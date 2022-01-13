@@ -283,8 +283,12 @@ footer {
     padding: 20px 30px;
   }
 
+  .header-text p:nth-child(1) {
+    font-size: 1rem;
+  }
+
   .header-text p:nth-child(2) {
-    font-size: 2.4rem;
+    font-size: 1.5rem;
     width: 80%;
     animation: typewriting 5s steps(44) 1, blinkCursor 0.5s infinite; 
     border-right: 5px solid hsl(207, 100%, 50%);
@@ -314,7 +318,12 @@ footer {
     margin-top: 100px;
   }
 
+  .services h4 {
+    font-size: 1.5rem;
+  }
+
   .services > p {
+    font-size: 1rem;
     margin-bottom: 50px;
   }
 
@@ -403,10 +412,14 @@ footer {
   }
 }
 
-@media (min-width: 2560px) {
+@media (min-width: 2320px) {
   header {
-    font-size: 2.3rem;
-    padding: 40px 500px;
+    font-size: 2rem;
+    padding: 40px 400px;
+  }
+
+  header a img {
+    width: 100px;
   }
 
   .header-text {
@@ -433,11 +446,11 @@ footer {
   }
 
   .cards {
-    margin-top: -40px;
+    margin-top: -35px;
   }
 
   .cards, .services .services-cards {
-    padding: 0 500px;
+    padding: 0 400px;
   }
 
   .card, .services .services-cards .service-card {
