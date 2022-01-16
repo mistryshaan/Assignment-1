@@ -47,6 +47,10 @@ header nav a:hover {
   color: hsl(207, 100%, 50%) !important;
 }
 
+header nav a:nth-child(5) {
+  margin-right: 0;
+}
+
 header nav a:nth-child(5), #mobile-nav a:nth-child(5) {
   background-color: hsl(207, 100%, 50%);
   border-radius: 2px;
@@ -69,8 +73,8 @@ header nav a:nth-child(5):hover {
 
 #mobile-nav {
   height: 100vh;
-  position: absolute;
-  top: -1000px;
+  position: fixed;
+  top: -100%;
   left: 0;
   width: 100%;
   z-index: 100;
@@ -375,7 +379,7 @@ footer {
 
   @keyframes show {
     from {
-      top: -1000px;
+      top: -100%;
     }
     to {
       top: 0;
@@ -387,11 +391,12 @@ footer {
       top: 0;
     }
     to {
-      top: -1000px;
+      top: -100%;
     }
   }
 }
 
+/* Medium screen sizes */
 @media (min-width: 769px) and (max-width: 1199px) {
   header {
     padding: 20px 100px;
@@ -402,6 +407,7 @@ footer {
   }
 }
 
+/* Laptop screen sizes */
 @media (min-width: 1200px) and (max-width: 1400px) {
   header {
     padding: 20px 200px;
@@ -412,9 +418,10 @@ footer {
   }
 }
 
+/* Large screen size */
 @media (min-width: 2320px) {
   header {
-    font-size: 2rem;
+    font-size: 1rem;
     padding: 40px 400px;
   }
 
@@ -428,11 +435,11 @@ footer {
   }
 
   .header-text p:nth-child(1) {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 
   .header-text p:nth-child(2) {
-    font-size: 5rem;
+    font-size: 3rem;
     width: 74rem;
   }
 
